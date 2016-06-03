@@ -151,7 +151,6 @@ var justOneString = function (input1, input2) {
     }
 }
 
-
 console.assert(justOneString('a',5) === true)
 console.assert(justOneString(6,'dotron') === true)
 console.assert(justOneString('peanut','butter') === false)
@@ -202,6 +201,14 @@ console.assert(NUMBER === 96)
 // Part 10
 
 // Make the following assertion work:
+var factory = function () {
+	return saySomething  
+}
+
+var saySomething = function () {
+	return "hello world"
+
+}
 
 console.assert(factory()() === 'hello world')  // INCEPTION!
 
