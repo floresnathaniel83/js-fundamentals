@@ -91,9 +91,14 @@ console.assert(isVowel("E") === true);
  * reverse("skoob") should return the
  * string "books".
  */
+
+//structure of basic function
+// temp storage
+// logic (body that gathers information)
+// new temp storage
 var reverse = function (input) {
 
-	var newString = " "
+	var newString = ""
 
 	for(var i = input.length - 1; i >= 0; i--) {
 		//log(i)
@@ -119,23 +124,29 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
  */
 
 var fizzbuzz = function (input) {
-var newString = " "
-for ( var n = 1; n <= 10; n = n + 1  ) {
-	var number = n
-   
-    if (number % 3 === 0 && number % 5 === 0 ) {
-      
-    } else if (number % 3 === 0 ) {
-    	
-	} else if (number % 5 === 0) {
-        	
-    } else {
-   
-    }  
+var newString = ""
+	// write out english/pseudo/js/input/output
+    // (1) start here  
+    // (2) execute block if true   
+    // (3) do this at the end
 
+        //(1)       //(2)      //(3)
+for ( var n = 1; n <= input; n = n + 1  ) {
+    //note, value of n changes on each iteration cycle 
+    if ( n % 3 === 0 && n % 5 === 0 ) {
+         newString = newString + "Fizzbuzz"
+    } else if ( n % 3 === 0 ) {
+         newString = newString + "fizz"
+	} else if ( n % 5 === 0 ) {
+		 newString = newString + "buzz"
+    } else { 
+        newString = newString + "."
+    }
+   
   }
- 
-}
+
+return newString
+ }
 
 
 console.assert(fizzbuzz(1) === ".")
@@ -152,13 +163,61 @@ console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
  * i.e. findLongestWord("a book full of dogs") should return "book"
  */
 
-function findLongestWord(sentence){
-    // YOUR CODE HERE
+//create a function that searches and takes out symbols and returns a new string
+//.splice and .join 
+//think isVowel pull info from an array
+//
+//>>>>write a function that strips punctuation!!!!
+
+var rmvSymbol = function (sentence) {
+	
+    var newWord = ""
+    var array = sentence.split("")
+    //log(array)
+    for (var i = 0; i < sentence.length; i = i + 1) {
+        
+        if(array[i] === "'") {
+        	var removed = array.splice (i , 1)
+            //log(removed)
+            //log(array)
+        }
+    
+    
+    }
+    return array.join("")
 }
+
+
+var findLongestWord = function (sentence){
+
+    var longestWord = "" 
+    rmvSymbol(sentence)
+    
+    var array =  rmvSymbol(sentence).split(" ")
+	
+    //log(array)
+    if (array[0].length > array[1].length) {
+    	var longestWord = array[0]
+	} else {
+    	var longestWord = array[1]
+    }
+    //log(longestWord)
+
+    for(var i = 2; i < array.length; i = i + 1) {
+   		 
+   		if (array[i].length > longestWord.length) {
+            longestWord = array[i]
+            
+}
+
+    }  
+    
+     return longestWord
+        
+  }
 
 console.assert(findLongestWord("a book full of dogs") === "book")
 console.assert(findLongestWord("don't mess with Texas") === "Texas")
-
 
 
 /**
@@ -168,6 +227,23 @@ console.assert(findLongestWord("don't mess with Texas") === "Texas")
  * - if no GCD exists, return 1
  */
 
+var GCD = function (num1, num2) {
+   
+    if (num1 < num2) {
+        var min = num1
+    } else {
+    	var min = num2
+    }
+     //log(min)
+	for( var i = min; i > 0; i-- ) { 
+         //log(i)
+        if ( num1 % i === 0 && num2 % i === 0 ) {
+        	return i
+        }
+    }
+return 1
+}
+        
 
 
 console.assert(GCD(5,1) === 1);
