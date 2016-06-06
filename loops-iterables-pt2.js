@@ -1,18 +1,19 @@
 // PART 0: Write a function called squareDance() that squares each number in an array.
-var squareDance = function (array) /*what do I name my parameter to take as an argument the element of an array*/ {
+///*what do I name my parameter to take as an argument the element of an array*/
+var squareDance = function (array){
     
     var i
-    var squareNum
+    var squareArray = []
     
 	for (i=0; i < array.length; i = i + 1) {
  		//log(array[i])
         squareNum = array[i] * array[i]
  		//log(squareNum)
+ 		squareArray.push(squareNum)
     }
     
      return squareNum
-    
-}
+  }
 
 console.assert(squareDance([1, 2])[1] === 4)
 console.assert(squareDance([5,10,15])[2] === 225)
