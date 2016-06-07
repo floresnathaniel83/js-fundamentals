@@ -111,9 +111,19 @@ var properSentences = function (paragraph) {
 console.assert(properSentences(paragraph) === "It was a fine morning. The wine was good. Light slanted in through the cafe window.")
 
 // PART 4: write a function called iPutTheFunIn(). It should take a string as input. The output should be a copy of the original string with the word 'fun' inserted into the center of the string. 
+var iPutTheFunIn = function (inputString) {
+var newString = ""
+var array = inputString.split("")
+//log(array)
+var centerOfArray = array.length / 2
+	
+	array.splice(centerOfArray,0,"fun")
 
+	newString = array.join("")
 
+    return newString 
 
+}
 
 console.assert(iPutTheFunIn("funerary") === "funefunrary")
 console.assert(iPutTheFunIn("reds") === "refunds")
@@ -121,6 +131,12 @@ console.assert(iPutTheFunIn("reds") === "refunds")
 // PART 5: write a function called pipeline(). it should take three inputs: (1) a starting value, (2) a function, and (3) another function. it should use functions (2) and (3) on the starting value, one after the other, and return a new value that has been processed by both function (2) and function (3).
 
 // the following three tests all correspond to the pipeline() function.
+
+var pipeline = function (inputVal, inputFunc1, inputFunc2) {
+
+	inputFunc1(inputFunc2(inputVal))
+	return inputVal
+}
 
 // test 1
 var paragraph = 'mom bring your crappy self in here. i want a dang sandwich.'

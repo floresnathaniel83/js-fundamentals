@@ -166,6 +166,11 @@ console.assert(justOneString(8,null) === false)
 // modify global variables, although that's not a good
 // pattern for production code.
 
+var doTwice = function (input) {
+	input(input())
+}
+
+
 var NUMBER = 10
 
 var incrementGlobalNumber = function(){
