@@ -109,7 +109,7 @@ dog.speak = function (stringInput) {
     return newString 
 }
 
-console.assert(dog.speak('i love you') === 'r rove rou')
+console.assert(dog.speak('i love you') === 'r rove rou')//>>>>returning false
 console.assert(dog.speak('so hungry') === 'ro rungry')
 
 
@@ -153,6 +153,22 @@ console.assert(pluck(stooges, 'age')[2] === 60)
 // Note that your counts should NOT be case-sensitive.
 var getCounts = function (textString) {
 
+var wordFrequencyObject = {}
+var getCounts = function (textString) {
+    var arrayOfCounts = []
+    var array = textString.split (" ")
+    //log(array)
+    for(var i = 0; i < array.length; i++) {
+        var countBut 
+        if(array[i] === "but") {
+            countBut = countBut + 1
+            log(countBut)
+        }
+        
+    }
+    
+    
+}
 
 
 
