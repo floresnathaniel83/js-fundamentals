@@ -167,7 +167,7 @@ console.assert(justOneString(8,null) === false)
 // pattern for production code.
 
 var doTwice = function (input) {
-	input(input())
+	input(input())//>>>>>>why does this work? verbalize what you think.
 }
 
 

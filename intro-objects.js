@@ -159,7 +159,7 @@ var getCounts = function (textString) {
     var array = textString.split (" ")
     //log(array)
     for(var i = 0; i < array.length; i++) {
-        var countBut 
+        var word = array[i]
         if(array[i] === "but") {
             countBut = countBut + 1
             log(countBut)
