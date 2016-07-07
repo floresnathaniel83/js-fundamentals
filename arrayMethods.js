@@ -25,7 +25,7 @@ console.assert(total === 24)
 // ----------------------------
 
 function reduce(array, callback){
-    total=array[0]
+    var total=array[0]
     for (var i = 1; i < array.length; i++)  {
         total = callback(total, array[i])
     
@@ -138,13 +138,20 @@ var customers = [
 
 var results = customers
 
-    .filter(function(n){
-        return customers.first.charAt(n) === 'J'     
+    .filter(function(element){
+        return element.first[0] === 'J'     
     })
-    .map(function(){
-        
+    .map(function(element){
+        var obj = {}
+        obj.fullname = element.first + " " + element.last
+        return obj
     })
-    .sort(function(){
+    .sort(function(a,b){
+        if (a.fullname < b.fullname) 
+            return -1
+
+        if (a.fullname > b.fullname) 
+            return 1
         
     })
 
