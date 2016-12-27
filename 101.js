@@ -11,10 +11,9 @@
 
 var addOne = function(input) {
 	var result = input + 1
-	//console.log("result from addOne>>>",result)
 	return result
 }
-//console.assert(addOne(1) === 2)
+console.assert(addOne(1) === 2)
 
 // Part 0
 
@@ -22,10 +21,8 @@ var addOne = function(input) {
 
 var doubleNum = function(num) {
 	var newNum = num * 2
-	//console.log("result from doubleOne>>>",newNum)
 	return newNum
 }
-//console.log("result from passing argument>>>",doubleNum(5))
 console.assert(doubleNum(5) === 10)
 
 
@@ -45,9 +42,8 @@ var sum = function(num1, num2) {
 	}
  }
 
-
-console.assert(sum(8, 11) === 19);
-console.assert(sum(4, 100) === 104);
+console.assert(sum(8, 11) === 19)
+console.assert(sum(4, 100) === 104)
 
 // PART 2
 
@@ -61,7 +57,7 @@ var average = function(num1, num2) {
 	var avgNum = newNum / 2
 	return avgNum
 }
-//console.log("result from average>>>",average(8,12))
+
 console.assert(average(8,12) === 10)
 console.assert(average(100,200) === 150)
 
@@ -72,9 +68,9 @@ console.assert(average(100,200) === 150)
  inputs is not a number, it will return "null."
  */
 
-console.assert(sum(867, 5309) === 6176);
-console.assert(sum('867', 5309) === null);
-console.assert(sum(true, 5) === null);
+console.assert(sum(867, 5309) === 6176)
+console.assert(sum('867', 5309) === null)
+console.assert(sum(true, 5) === null)
 
 
 // Part 4
@@ -212,12 +208,9 @@ console.assert(NUMBER === 96)
 
 // Make the following assertion work:
 var factory = function() {
-	return saySomething  
-}
-
-var saySomething = function() {
-	return "hello world"
-
+		return function() { // how does the ()() syntax work?
+			return "hello world"
+	}
 }
 
 console.assert(factory()() === 'hello world') 
@@ -226,12 +219,10 @@ console.assert(factory()() === 'hello world')
 
 // Want more? 
 
-var factory2 = function() {
-	return saySomething2
-}
-
-var saySomething2 = function(input){
-	return input
+var factory2 = function(){
+		return function(input){ // how does the ()() syntax work?
+			return input
+	}
 }
 
 console.assert(factory2()('you sly dog') === 'you sly dog')
@@ -241,6 +232,11 @@ console.assert(factory2()(999) === 999)
 
 // This can't be healthy...
 
+var factory3 = function(input){ // how does the ()() syntax work? I think that it means a function that has to return a function
+	return function(){
+		return input
+	}
+}
+
 console.assert(factory3('i have reached function nirvana')() === 'i have reached function nirvana')
 console.assert(factory3(100)() === 100)
-
