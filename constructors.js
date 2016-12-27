@@ -205,8 +205,13 @@ console.assert(safe.unlock(rightKey) === sensitive);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 var Validator = function () {
-	
-	
+	this.email = function(string) {
+		if(string.includes('@')){
+			return true
+		} else{
+			return false
+		}
+	}		
 }
 
 

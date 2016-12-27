@@ -6,7 +6,6 @@
 
 function forEach(array, callback){
     for(var i = 0; i < array.length; i++) {
-        var arrayNum = array[i]
         callback(array[i]) 
     }
 
