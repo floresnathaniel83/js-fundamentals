@@ -211,11 +211,11 @@ console.assert(NUMBER === 96)
 // Part 10
 
 // Make the following assertion work:
-var factory = function () {
+var factory = function() {
 	return saySomething  
 }
 
-var saySomething = function () {
+var saySomething = function() {
 	return "hello world"
 
 }
@@ -225,6 +225,14 @@ console.assert(factory()() === 'hello world')
 // Part 11
 
 // Want more? 
+
+var factory2 = function() {
+	return saySomething2
+}
+
+var saySomething2 = function(input){
+	return input
+}
 
 console.assert(factory2()('you sly dog') === 'you sly dog')
 console.assert(factory2()(999) === 999)
