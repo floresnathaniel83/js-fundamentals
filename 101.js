@@ -167,9 +167,8 @@ console.assert(justOneString(8,null) === false)
 // pattern for production code.
 
 var doTwice = function (input) {
-	input(input())//>>>>>>why does this work? verbalize what you think.
+	input(input())
 }
-
 
 var NUMBER = 10
 
@@ -194,6 +193,12 @@ console.assert(NUMBER === 48)
 // the value of a certain global variable, called ORACLE, is 
 // "YES." Otherwise, it will does nothing.
 
+var conditionallyInvoke = function (inputFunction){
+	 if(ORACLE === 'YES'){
+    	inputFunction()
+    } 
+}
+
 var ORACLE = 'NO'
 
 conditionallyInvoke(doubleGlobalNumber)
@@ -215,8 +220,7 @@ var saySomething = function () {
 
 }
 
-console.assert(factory()() === 'hello world')  // INCEPTION!
-
+console.assert(factory()() === 'hello world') 
 
 // Part 11
 
