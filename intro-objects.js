@@ -49,16 +49,13 @@ var customers = [
 var getFullNames = function (customerArray) {
     var namesArray = []
     for( var i = 0; i < customerArray.length; i++ ) {
-         var customerObject = customerArray [i]
-            //log(customerObject)
-         var firstName = customerObject.first
-         var lastName = customerObject.last
-         
+         var customersObject = customerArray[i]
+         var firstName = customersObject.first
+         var lastName = customersObject.last
          namesArray.push(firstName + " " + lastName)
     
     }
-    
-return namesArray
+    return namesArray
 }
 
 
@@ -98,18 +95,17 @@ console.assert(dog.name === 'carl')
 // return a new version of that string where the first letter of every word is replaced 
 // with the letter 'r'.
 
-dog.speak = function (stringInput) {
+dog.speak = function (stringInput){
     var newString = ""
     var array = stringInput.split(" ")
-    //log(array)
-    for ( var i = 0; i < array.length; i++ ) {
-    //log(i)
-    var newString = newString + array[i].replace(array[i].charAt(0), "r") + " "
+    for(var i = 0; i < array.length; i++){
+        var newString = newString + array[i].replace(array[i].charAt(0), "r") + " "
      }
+    newString = newString.substring(0, newString.length - 1)
     return newString 
 }
 
-console.assert(dog.speak('i love you') === 'r rove rou')//>>>>returning false
+console.assert(dog.speak('i love you') === 'r rove rou')
 console.assert(dog.speak('so hungry') === 'ro rungry')
 
 
