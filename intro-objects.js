@@ -161,7 +161,6 @@ console.assert(wordFrequencyObject.black === 5)
 // for these problems you will need to use the for-in loop, and the special 
 // `this` keyword.
 
-
 // Part 5
 
 // Write a function called reverseObject(). It should take as input an object, 
@@ -172,6 +171,14 @@ var object = {
     occupants: 4,
     apartment_no: "2b",
     structural_integrity: "failing"
+}
+
+var reverseObject = function(obj){
+    for(var key in obj){
+        var newKey = obj[key]
+        obj[newKey] = key
+    }
+    return obj
 }
 
 var reversed = reverseObject(object)
