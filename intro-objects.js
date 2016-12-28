@@ -1,6 +1,5 @@
 // NORMAL MODE ( 0 - 4 )
 
-
 // Part 0 
 
 // Write a function called flipColor. This function may be 
@@ -58,12 +57,7 @@ var getFullNames = function (customerArray) {
     return namesArray
 }
 
-
-
 console.assert(getFullNames(customers)[1] === "John Smith")
-
-
-
 
 // Part 2
 
@@ -108,9 +102,6 @@ dog.speak = function (stringInput){
 console.assert(dog.speak('i love you') === 'r rove rou')
 console.assert(dog.speak('so hungry') === 'ro rungry')
 
-
-
-
 // Part 3
 
 // Write a function pluck() that, given a list of objects, extracts a list of
@@ -132,14 +123,10 @@ var pluck = function (inputArray,propName) {
      return valuesArray
 }
 
-
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
 
 console.assert(pluck(stooges, 'name')[0] === 'moe')
 console.assert(pluck(stooges, 'age')[2] === 60)
-
-
-
 
 // Part 4
 
@@ -147,36 +134,18 @@ console.assert(pluck(stooges, 'age')[2] === 60)
 // an object which stores the frequency of each word in the string.
 
 // Note that your counts should NOT be case-sensitive.
-var getCounts = function (textString) {
-
-var wordFrequencyObject = {}
-var getCounts = function (textString) {
-    var arrayOfCounts = []
-    var array = textString.split (" ")
-    //log(array)
-    for(var i = 0; i < array.length; i++) {
-        var word = array[i]
-        if(array[i] === "but") {
-            countBut = countBut + 1
-            log(countBut)
+var getCounts = function(textString){
+        var obj = {}
+        var array = textString.split (" ")
+        for(var i = 0; i < array.length; i++){
+            var word = array[i].substr(0,array[i].length).toLowerCase()
+            if(obj[word] === undefined){
+                obj[word] = 1
+            } else {
+                obj[word] += 1  
+            }
         }
-        
-    }
-    
-    
-}
-
-
-
-
-
-
-var freqObj = {
-
-
-    
-}
-
+        return obj
 }
 
 var text = "It’s obviously not the case, but T’Challa—the Black Panther and mythical ruler of Wakanda—has always struck as the product of the black nationalist dream, a walking revocation of white supremacist myth. T’Challa isn’t just a superhero in the physical sense, he is one of the smartest people in the world, ruling the most advanced civilization on the planet. Wakanda’s status as ever-independent seems to eerily parallel Ethiopia’s history as well as its place in the broader black imagination. Maybe it’s only me, but I can’t read Jason Aaron’s superb “See Wakanda And Die” and not think of Adowa.\
@@ -186,9 +155,6 @@ var wordFrequencyObject = getCounts(text)
 
 console.assert(wordFrequencyObject.but === 3)
 console.assert(wordFrequencyObject.black === 5)
-
-
-
 
 // ADVENTURE MODE ( 5 - 8 )
 
