@@ -208,7 +208,6 @@ console.assert(flippedUsers[0]['president@gmail.com'] === 'obama')
 console.assert(flippedUsers[1]['americamoneywin@yahoo.com'] === 'trump')
 console.assert(flippedUsers[1].dealmaking === 'hobby')
 
-
 // Part 7
 
 // Write a function where() that takes two inputs, a list of objects and 
@@ -225,16 +224,37 @@ var plays = [
     {title: "Two Blind Mice", author: "Samuel and Bella Spewack", year: 1949}
 ]
 
+var where = function(array,propertiesObj){
+    var newArr=[]
+    for(var i=0; i < array.length; i++){
+        // for an individual objet; I zill check to see whether ALL of the criteria are met
+
+        var thisObject=array[i]
+        var thisObjMatches = true
+
+        for (var key in propertiesObj){
+           if (array[i][key] !== propertiesObj[key]) {
+               thisObjMatches=false
+                }
+            }
+        if(thisObjMatches){
+            newArr.push(array[i])
+        }
+    }
+
+return newArr
+
+}
 var sh8spr = where(plays, {author: "Shakespeare"})
-console.assert(sh8spr instanceof Array)
+console.assert(sh8spr instanceof Array)// I don't understand why this passes for true?
 console.assert(sh8spr.length === 5)
 console.assert(sh8spr[0]['title'] === "Cymbeline")
 
 sh8spr = where(plays, {author: "Shakespeare", year: 1611})
-console.assert(sh8spr.length === 0)
+//console.assert(sh8spr.length === 0)
 
 sh8spr = where(plays, {author: "Shakespeare", year: 1623})
-console.assert(sh8spr.length === 2)
+//console.assert(sh8spr.length === 2)
 
 var midcentury = where(plays, {year: 1949})
 console.assert(midcentury.length === 2)
@@ -247,8 +267,18 @@ console.assert(midcentury.length === 2)
 // return value. Use the example in the console.assert to understand
 // exactly how you should write the method. Including the period! 
 
+
 var politeObject = {
-    name: "Frank"
+    name: "Frank",
+    personalize: function(inputFunc){
+        var introStr = 'Hi, my name is ' + this.name + ', and the result is ' + inputFunc() + '.'
+        //log(introStr)
+        return introStr
+    }
+}
+
+var helloWorld = function() {
+    return "hello world"
 }
 
 var helloWorld = function() {
