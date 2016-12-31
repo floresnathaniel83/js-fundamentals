@@ -228,16 +228,15 @@ var where = function(array,propertiesObj){
     var newArr=[]
     for(var i=0; i < array.length; i++){
         // for an individual objet; I zill check to see whether ALL of the criteria are met
-
-        var thisObject=array[i]
         var thisObjMatches = true
 
         for (var key in propertiesObj){
-           if (array[i][key] !== propertiesObj[key]) {
+           if(array[i][key] !== propertiesObj[key]) {
                thisObjMatches=false
                 }
             }
-        if(thisObjMatches){
+            
+            if(thisObjMatches){
             newArr.push(array[i])
         }
     }
@@ -271,9 +270,7 @@ console.assert(midcentury.length === 2)
 var politeObject = {
     name: "Frank",
     personalize: function(inputFunc){
-        var introStr = 'Hi, my name is ' + this.name + ', and the result is ' + inputFunc() + '.'
-        //log(introStr)
-        return introStr
+       return 'Hi, my name is ' + this.name + ', and the result is ' + inputFunc() + '.'
     }
 }
 
@@ -281,10 +278,5 @@ var helloWorld = function() {
     return "hello world"
 }
 
-var helloWorld = function() {
-    return "hello world"
-}
-
 var personalizedResult = politeObject.personalize(helloWorld)
-console.assert(personalizedResult === "Hi, my name is Frank, and the \
-    result is hello world.")
+console.assert(personalizedResult === "Hi, my name is Frank, and the result is hello world.")
