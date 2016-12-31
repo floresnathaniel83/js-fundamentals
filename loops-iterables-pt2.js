@@ -4,7 +4,7 @@ var squareDance = function (array){
     var squareArray = []
     
 	for (i=0; i < array.length; i = i + 1) {
-        squareNum = array[i] * array[i]
+        var squareNum = array[i] * array[i]
  		squareArray.push(squareNum)
     }
     return squareArray
@@ -17,23 +17,15 @@ console.assert(squareDance([3,6,9,3])[0] === 9)
 // PART 1: write a function called nicer(). It should clean up the language in its input sentence.
 
 var nicer = function (sentence) {
-	
-    var newSentence = ""
+	var newSentence = ""
     var array = sentence.split(" ")
-    //log(array)
     for (var i = 0; i < array.length; i++) {
-    //log(i)
-    //log(array[i])
     	if (array[i] === "darn" || array[i] === "heck" || array[i] === "crappy" || array[i] === "dang") {
       	var removed = array.splice( i , 1 )	 
-        //log(removed)
-        // log(array)
        }
-  		
-   
     }	
 
- return newSentence = array.join(" ") // >>>>> add "" not returning  ""!!!!!
+ return newSentence = array.join(" ")
      
 }
 
@@ -82,7 +74,6 @@ console.assert(properSentences(paragraph) === "It was a fine morning. The wine w
 var iPutTheFunIn = function (inputString) {
 var newString = ""
 var array = inputString.split("")
-//log(array)
 var centerOfArray = array.length / 2
 	
 	array.splice(centerOfArray,0,"fun")
@@ -101,9 +92,7 @@ console.assert(iPutTheFunIn("reds") === "refunds")
 // the following three tests all correspond to the pipeline() function.
 
 var pipeline = function (inputVal, inputFunc1, inputFunc2) {
-
-	inputFunc1(inputFunc2(inputVal))
-	return inputVal
+    return inputFunc2(inputFunc1(inputVal))
 }
 
 // test 1
@@ -128,6 +117,7 @@ var exclaimAll = function(arr) {
 	for (var i = 0; i < arr.length; i ++) {
 		newArr.push(arr[i] + '!')
 	}
+    return newArr
 }
 
 var result = pipeline([10,20,30],squareDance,exclaimAll)
