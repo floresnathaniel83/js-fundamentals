@@ -1,18 +1,13 @@
 // PART 0: Write a function called squareDance() that squares each number in an array.
-///*what do I name my parameter to take as an argument the element of an array*/
 var squareDance = function (array){
-    
     var i
     var squareArray = []
     
 	for (i=0; i < array.length; i = i + 1) {
- 		//log(array[i])
         squareNum = array[i] * array[i]
- 		//log(squareNum)
  		squareArray.push(squareNum)
     }
-    
-     return squareNum
+    return squareArray
   }
 
 console.assert(squareDance([1, 2])[1] === 4)
@@ -47,39 +42,21 @@ console.assert(nicer("mom get the heck in here and bring me a darn sandwich.") =
 console.assert(nicer("here son, your crappy sandwich is on the dang plate.") === "here son, your sandwich is on the plate.")
 
 // PART 2: write a function called capitalizeAll(). It should take as input a sentence and capitalize the first letter of every word in the sentence. 
-// 
-var punctuate = function (array) {
-    
-    var newStr = ""
-   	 
-	for(var i = 0; i < array.length-1; i++) {
-        log(i)
-        log(array[i])
-        newStr = '"' + array[i] + "." + '"'
-    	log(newStr)
-    }
-    
-}
-
-punctuate(array)
-
 
 var capFirstChar = function (string) {
-	var capWord = string.charAt(0).toUpperCase() + string.substr(1)
+	var capWord = string[0].toUpperCase() + string.substr(1)
     return capWord
 }
-
-//log(capFirstChar("hello"))
 
 var capitalizeAll = function (sentence) {
 	var newSentence = ""
     var array = sentence.split(" ")
-    //log(array)
     for (var i = 0; i < array.length; i++) {
-        //log(i)
     	newSentence = newSentence +  capFirstChar(array[i]) + " "
         
     }
+    
+    newSentence = newSentence.substring(0, newSentence.length - 1)
     return newSentence
 }
 
@@ -89,23 +66,14 @@ console.assert(capitalizeAll('every day is like sunday.') === ('Every Day Is Lik
 
 var paragraph = 'it was a fine morning. the wine was good. light slanted in through the cafe window.'
 
-var capFirstChar = function (string) {
-	var capWord = string.charAt(0).toUpperCase() + string.substr(1)
-    return capWord
-}
-
-var paragraph = 'it was a fine morning. the wine was good. light slanted in through the cafe window.'
-
 var properSentences = function (paragraph) {
-	var newSentence = ""
     var array = paragraph.split(". ")
-    //log(array)
-    for (var i = 0; i < array.length; i++) {
-        //log(i)
-    	newSentence = newSentence +  capFirstChar(array[i]) + " "
+    var newSentence = capFirstChar(array[0])
+    for (var i = 1; i < array.length; i++) {
+        newSentence += '. ' + capFirstChar(array[i])
         
     }
-    return newSentence  //>>>>>need to add back punctuation ****
+    return newSentence
 }
 
 console.assert(properSentences(paragraph) === "It was a fine morning. The wine was good. Light slanted in through the cafe window.")

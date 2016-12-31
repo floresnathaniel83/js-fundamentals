@@ -1,6 +1,5 @@
 // NORMAL MODE ( 0 - 4 )
 
-
 // Part 0 
 
 // Write a function called flipColor. This function may be 

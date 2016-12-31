@@ -227,7 +227,6 @@ var plays = [
 var where = function(array,propertiesObj){
     var newArr=[]
     for(var i=0; i < array.length; i++){
-        // for an individual objet; I zill check to see whether ALL of the criteria are met
         var thisObjMatches = true
 
         for (var key in propertiesObj){
@@ -250,10 +249,10 @@ console.assert(sh8spr.length === 5)
 console.assert(sh8spr[0]['title'] === "Cymbeline")
 
 sh8spr = where(plays, {author: "Shakespeare", year: 1611})
-//console.assert(sh8spr.length === 0)
+console.assert(sh8spr.length === 0)
 
 sh8spr = where(plays, {author: "Shakespeare", year: 1623})
-//console.assert(sh8spr.length === 2)
+console.assert(sh8spr.length === 2)
 
 var midcentury = where(plays, {year: 1949})
 console.assert(midcentury.length === 2)
